@@ -12,7 +12,7 @@ env:
   IMAGE_TAGS: ${{ inputs.image_tags && format('{0};{1}', github.ref_name, inputs.image_tags) || github.ref_name }}
   PREDICTOR_IMAGE_NAME: ${{ github.repository }}/predictor
   PACKAGE_NAME_ESCAPED: issue-labeler%2Fpredictor
-  GITHUB_API_PACKAGE_OWNER: /orgs/dotnet
+  GITHUB_API_PACKAGE_OWNER: /users/swathipil
 
 jobs:
   publish-predictor:

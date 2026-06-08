@@ -11,7 +11,7 @@ env:
   BASE_IMAGE: mcr.microsoft.com/dotnet/runtime:9.0-noble-chiseled
   PREDICTOR_IMAGE_NAME: ${{ github.repository }}/predictor
   PACKAGE_NAME_ESCAPED: issue-labeler%2Fpredictor
-  GITHUB_API_PACKAGE_OWNER: /orgs/dotnet
+  GITHUB_API_PACKAGE_OWNER: ${{ github.repository_owner == 'dotnet' && '/orgs/dotnet' || format('/users/{0}', github.repository_owner) }}
 
 jobs:
   publish-predictor:
